@@ -1,54 +1,31 @@
-export class consejero {
-    nombre;
-    edad;
-    estaVivo;
-    casa;
+import { Personaje } from "../personaje.js";
+
+export class consejero extends Personaje {
     especialidad;
 
-    // ── Getters ──
-    getNombre() {
-        return this.nombre;
+    // Constructor
+    constructor(nombre, edad, estaVivo, casa, especialidad) {
+        super(nombre, edad, estaVivo, casa);
+        this.especialidad = especialidad;
     }
 
-    getEdad() {
-        return this.edad;
-    }
-
-    getEstaVivo() {
-        return this.estaVivo;
-    }
-
-    getCasa() {
-        return this.casa;
-    }
-
+    // Getter
     getEspecialidad() {
         return this.especialidad;
     }
 
-    // ── Setters ──
-    setNombre(nombre) {
-        this.nombre = nombre;
-    }
-
-    setEdad(edad) {
-        this.edad = edad;
-    }
-
-    setEstaVivo(estaVivo) {
-        this.estaVivo = estaVivo;
-    }
-
-    setCasa(casa) {
-        this.casa = casa;
-    }
-
+    // Setter
     setEspecialidad(especialidad) {
         this.especialidad = especialidad;
     }
 
-     // Funcion luchar
+    // Funcion luchar
     luchar() {
-        console.log(`${this.nombre} no lucha con armas, sino con palabras e inteligencia.`);
+        console.log(`${this.nombre} no lucha con armas, sino con palabras e inteligencia`);
+    }
+
+    // Funcion aconsejar
+    aconsejar(rey) {
+        console.log(`${this.nombre} aconseja a ${rey.getNombre()} sobre ${this.especialidad}.`);
     }
 }

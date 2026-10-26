@@ -1,54 +1,31 @@
-export class rey {
-    nombre;
-    edad;
-    estaVivo;
-    casa;
+import { Personaje } from "../personaje.js";
+
+export class rey extends Personaje {
     aniosReinado;
 
-    // ── Getters ──
-    getNombre() {
-        return this.nombre;
+    // Constructor
+    constructor(nombre, edad, estaVivo, casa, aniosReinado) {
+        super(nombre, edad, estaVivo, casa);
+        this.aniosReinado = aniosReinado;
     }
 
-    getEdad() {
-        return this.edad;
-    }
-
-    getEstaVivo() {
-        return this.estaVivo;
-    }
-
-    getCasa() {
-        return this.casa;
-    }
-
+    // Getter
     getAniosReinado() {
         return this.aniosReinado;
     }
 
-    // ── Setters ──
-    setNombre(nombre) {
-        this.nombre = nombre;
-    }
-
-    setEdad(edad) {
-        this.edad = edad;
-    }
-
-    setEstaVivo(estaVivo) {
-        this.estaVivo = estaVivo;
-    }
-
-    setCasa(casa) {
-        this.casa = casa;
-    }
-
+    // Setter
     setAniosReinado(aniosReinado) {
         this.aniosReinado = aniosReinado;
     }
 
     // Funcion luchar
     luchar() {
-        console.log(`${this.nombre} no lucha en persona, ordena a los ejércitos de la Casa ${this.casa.getNombre()} desde el trono.`);
+        console.log(`${this.nombre} lidera la batalla y anima a sus tropas.`);
+    }
+
+    // Funcion gobernar
+    gobernar() {
+        console.log(`${this.nombre} gobierna con sabiduría desde hace ${this.aniosReinado} años.`);
     }
 }

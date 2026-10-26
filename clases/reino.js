@@ -41,9 +41,9 @@ export class Reino {
     }
 
     // Proclamar rey
-    proclamarRey(personaje) {
-        this.rey = personaje;
-        console.log(personaje.getNombre() + " ha sido proclamado rey de " + this.nombre + ".");
+    proclamarRey(rey) {
+        this.rey = rey;
+        console.log(rey.getNombre() + " ha sido proclamado rey de " + this.nombre + ".");
     }
 
     // Listar las casas
