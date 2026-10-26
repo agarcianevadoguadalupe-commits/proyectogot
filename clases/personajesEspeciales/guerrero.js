@@ -1,37 +1,37 @@
 import { Personaje } from "../personaje.js";
 
 export class guerrero extends Personaje {
-    arma;
+    #arma;
 
     // Constructor
     constructor(nombre, edad, estaVivo, casa, arma) {
         super(nombre, edad, estaVivo, casa);
-        this.arma = arma;
+        this.#arma = arma;
     }
 
     // Getter
-    getArma() {
-        return this.arma;
+    get getArma() {
+        return this.#arma;
     }
 
     // Setter
-    setArma(arma) {
-        this.arma = arma;
+    set setArma(arma) {
+        this.#arma = arma;
     }
 
     // Equipar un arma
     equiparArma(arma) {
-        this.setArma(arma);
-        console.log(this.nombre + " ha equipado el arma " + arma.getNombre() + ".");
+        this.setArma = arma;
+        console.log(this.getNombre + " ha equipado el arma " + arma.getNombre + ".");
     }
 
     // Funcion luchar
     luchar() {
-        console.log(`${this.nombre} ataca con su ${this.arma.nombre}, causando ${this.arma.dano} puntos de daño.`);
+        console.log(`${this.getNombre} ataca con su ${this.#arma.getNombre}, causando ${this.#arma.getDano} puntos de daño.`);
     }
 
     // Funcion entrenar
     entrenar() {
-        console.log(`${this.nombre} se entrena sin descanso para la próxima batalla.`);
+        console.log(`${this.getNombre} se entrena sin descanso para la próxima batalla.`);
     }
 }

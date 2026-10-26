@@ -1,6 +1,6 @@
 import { casa } from "./clases/casa.js";
 import { Arma } from "./clases/arma.js";
-import { Reino } from "./clases/Reino.js";
+import { Reino } from "./clases/reino.js";
 import { guerrero } from "./clases/personajesEspeciales/guerrero.js";
 import { consejero } from "./clases/personajesEspeciales/consejero.js";
 import { rey } from "./clases/personajesEspeciales/rey.js";
@@ -19,7 +19,7 @@ const robert = new rey("Robert Baratheon", 45, true, lannister, 15);
 
 // Reino: el rey es un objeto de la clase rey
 const reino = new Reino("Poniente");
-reino.setRey(robert);
+reino.setRey = robert;
 
 // Jon Snow (guerrero)
 jon.presentarse();

@@ -1,62 +1,62 @@
 export class Reino {
-    nombre;
-    casas = [];
-    rey;
+    #nombre;
+    #casas = [];
+    #rey;
 
     // Constructor
     constructor(nombre) {
-        this.nombre = nombre;
+        this.#nombre = nombre;
     }
 
     // Getters
-    getNombre() {
-        return this.nombre;
+    get getNombre() {
+        return this.#nombre;
     }
 
-    getCasas() {
-        return this.casas;
+    get getCasas() {
+        return this.#casas;
     }
 
-    getRey() {
-        return this.rey;
+    get getRey() {
+        return this.#rey;
     }
 
     // Setters
-    setNombre(nombre) {
-        this.nombre = nombre;
+    set setNombre(nombre) {
+        this.#nombre = nombre;
     }
 
-    setCasas(casas) {
-        this.casas = casas;
+    set setCasas(casas) {
+        this.#casas = casas;
     }
 
-    setRey(rey) {
-        this.rey = rey;
+    set setRey(rey) {
+        this.#rey = rey;
     }
 
     // Agregar una casa
     agregarCasa(casa) {
-        this.casas.push(casa);
-        console.log("La Casa " + casa.getNombre() + " ha sido añadida al Reino de " + this.nombre + ".");
+        this.#casas.push(casa);
+        console.log("La Casa " + casa.getNombre + " ha sido añadida al Reino de " + this.#nombre + ".");
     }
 
     // Proclamar rey
     proclamarRey(rey) {
-        this.rey = rey;
-        console.log(rey.getNombre() + " ha sido proclamado rey de " + this.nombre + ".");
+        this.#rey = rey;
+        console.log(rey.getNombre + " ha sido proclamado rey de " + this.#nombre + ".");
     }
 
     // Listar las casas
     listarCasas() {
-        console.log("Casas del Reino de " + this.nombre + ":");
-        for (let i = 0; i < this.casas.length; i++) {
-            console.log("- Casa " + this.casas[i].getNombre());
+        console.log("Casas del Reino de " + this.#nombre + ":");
+        for (let i = 0; i < this.#casas.length; i++) {
+            console.log("- Casa " + this.#casas[i].getNombre);
         }
     }
 
     // Mostrar información del rey
     mostrarRey() {
         console.log("Rey actual:");
-        console.log("El rey actual es " + this.rey.getNombre() + " de la Casa " + this.rey.getCasa().getNombre() + ".");
+        console.log("El rey actual es " + this.#rey.getNombre + " de la Casa " + this.#rey.getCasa.getNombre + ".");
     }
 }

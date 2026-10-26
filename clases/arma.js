@@ -1,43 +1,43 @@
 export class Arma {
-    nombre;
-    dano;
-    tipo;
+    #nombre;
+    #dano;
+    #tipo;
 
     // Constructor
     constructor(nombre, dano, tipo) {
-        this.nombre = nombre;
-        this.dano = dano;
-        this.tipo = tipo;
+        this.#nombre = nombre;
+        this.#dano = dano;
+        this.#tipo = tipo;
     }
 
     // Getters
-    getNombre() {
-        return this.nombre;
+    get getNombre() {
+        return this.#nombre;
     }
 
-    getDano() {
-        return this.dano;
+    get getDano() {
+        return this.#dano;
     }
 
-    getTipo() {
-        return this.tipo;
+    get getTipo() {
+        return this.#tipo;
     }
 
     // Setters
-    setNombre(nombre) {
-        this.nombre = nombre;
+    set setNombre(nombre) {
+        this.#nombre = nombre;
     }
 
-    setDano(dano) {
-        this.dano = dano;
+    set setDano(dano) {
+        this.#dano = dano;
     }
 
-    setTipo(tipo) {
-        this.tipo = tipo;
+    set setTipo(tipo) {
+        this.#tipo = tipo;
     }
 
     // Descripción
     descripcion() {
-        console.log(this.nombre + " (" + this.tipo + ") - daño: " + this.dano);
+        console.log(this.#nombre + " (" + this.#tipo + ") - daño: " + this.#dano);
     }
 }
