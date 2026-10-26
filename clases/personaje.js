@@ -1,9 +1,8 @@
-class Personaje {
+export class Personaje {
     nombre;
     edad;
     estaVivo;
     casa;
-    arma;
 
     // ── Constructor ──
     constructor(nombre, edad, estaVivo, casa) {
@@ -30,10 +29,6 @@ class Personaje {
         return this.casa;
     }
 
-    getArma() {
-        return this.arma;
-    }
-
     // ── Setters ──
     setNombre(nombre) {
         this.nombre = nombre;
@@ -51,10 +46,6 @@ class Personaje {
         this.casa = casa;
     }
 
-    setArma(arma) {
-        this.arma = arma;
-    }
-
     // Presentarse
     presentarse() {
         console.log("Soy " + this.nombre + " de la Casa " + this.casa.getNombre() + ".");
@@ -66,9 +57,4 @@ class Personaje {
         console.log(this.nombre + " ha muerto");
     }
 
-    // Equipar un arma
-    equiparArma(arma) {
-        setArma(arma);
-        console.log(this.nombre + " ha equipado el arma " + arma.getNombre() + ".");
-    }
 }

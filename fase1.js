@@ -3,7 +3,7 @@ import { casa } from "./clases/casa.js";
 import { Reino } from "./clases/reino.js";
 import { Arma } from "./clases/arma.js";
 
-// ── Crear las instancias ──
+// Crear las instancias
 const reino = new Reino("Poniente");
 
 const stark = new casa("Stark", "Se acerca el invierno");

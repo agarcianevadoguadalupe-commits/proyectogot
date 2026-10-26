@@ -1,4 +1,4 @@
-class Arma {
+export class Arma {
     nombre;
     dano;
     tipo;

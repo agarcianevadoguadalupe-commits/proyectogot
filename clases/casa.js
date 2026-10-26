@@ -1,4 +1,4 @@
-class casa {
+export class casa {
     nombre;
     lema;
     miembros = [];
