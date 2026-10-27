@@ -1,3 +1,5 @@
+import { rey } from "./personajesEspeciales/rey.js";
+
 export class Reino {
     #nombre;
     #casas = [];
@@ -41,9 +43,13 @@ export class Reino {
     }
 
     // Proclamar rey
-    proclamarRey(rey) {
-        this.#rey = rey;
-        console.log(rey.getNombre + " ha sido proclamado rey de " + this.#nombre + ".");
+    proclamarRey(nuevoRey) {
+        if (nuevoRey instanceof rey) {
+            this.rey = nuevoRey;
+            console.log(nuevoRey.getNombre() + " ha sido proclamado rey de " + this.nombre + ".");
+        } else {
+            console.log("Solo se puede proclamar rey a un objeto de la clase rey.");
+        }
     }
 
     // Listar las casas
