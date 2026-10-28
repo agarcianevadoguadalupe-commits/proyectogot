@@ -42,11 +42,19 @@ export class Reino {
         console.log("La Casa " + casa.getNombre + " ha sido añadida al Reino de " + this.#nombre + ".");
     }
 
+        set setRey(nuevoRey) {
+        if (nuevoRey instanceof rey) {
+            this.#rey = nuevoRey;
+        } else {
+            console.log("Solo se puede asignar un objeto de la clase rey.");
+        }
+    }
+
     // Proclamar rey
     proclamarRey(nuevoRey) {
         if (nuevoRey instanceof rey) {
-            this.rey = nuevoRey;
-            console.log(nuevoRey.getNombre() + " ha sido proclamado rey de " + this.nombre + ".");
+            this.#rey = nuevoRey;
+            console.log(nuevoRey.getNombre + " ha sido proclamado rey de " + this.#nombre + ".");
         } else {
             console.log("Solo se puede proclamar rey a un objeto de la clase rey.");
         }
