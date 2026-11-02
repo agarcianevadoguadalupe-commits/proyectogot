@@ -86,4 +86,66 @@ export class batalla {
 
         console.log(`${guerreroA.getNombre}: ${guerreroA.getVida} | ${guerreroB.getNombre}: ${guerreroB.getVida}`);
     }
+    
+    // Batalla Final
+    // Devuelve solo los personajes vivos de una lista
+    #vivos(lista) {
+        const vivos = [];
+        for (let i = 0; i < lista.length; i++) {
+            if (lista[i].getEstaVivo) {
+                vivos.push(lista[i]);
+            }
+        }
+        return vivos;
+    }
+
+    batallaFinal(casa, khaleesi, ejercitoCaminantes) {
+        // Ejército aliado: guerreros de la casa + dragones de Daenerys
+        const aliados = this.#guerrerosVivos(casa).concat(khaleesi.getDragones);
+        let ronda = 1;
+
+        console.log("¡COMIENZA LA BATALLA FINAL!");
+        console.log(`La casa ${casa.getNombre} y los dragones de ${khaleesi.getNombre} se enfrentan a los Caminantes Blancos.`);
+
+        console.log(`Los guerreros que pelearán de la casa ${casa.getNombre} serán los siguientes:`);
+        console.log(this.#guerrerosVivos(casa));
+
+        while (this.#vivos(aliados).length > 0 && this.#vivos(ejercitoCaminantes).length > 0) {
+            console.log(`Ronda ${ronda}:`);
+
+            // Atacan los aliados
+            const aliadosVivos = this.#vivos(aliados);
+            for (let i = 0; i < aliadosVivos.length; i++) {
+                const enemigos = this.#vivos(ejercitoCaminantes);
+                if (enemigos.length > 0) {
+                    const posicion = Math.floor(Math.random() * enemigos.length);
+                    aliadosVivos[i].atacar(enemigos[posicion]);
+                }
+            }
+
+            // Atacan los caminantes blancos
+            const caminantesVivos = this.#vivos(ejercitoCaminantes);
+            for (let i = 0; i < caminantesVivos.length; i++) {
+                const objetivos = this.#vivos(aliados);
+                if (objetivos.length > 0) {
+                    const posicion = Math.floor(Math.random() * objetivos.length);
+                    caminantesVivos[i].atacar(objetivos[posicion]);
+                }
+            }
+
+            ronda++;
+        }
+
+        // Resultado
+        if (this.#vivos(ejercitoCaminantes).length === 0) {
+            console.log(`¡El fuego ha vencido al hielo! La casa ${casa.getNombre} y los dragones han salvado Poniente.`);
+        } else {
+            console.log(`¡El hielo ha vencido! La noche eterna cae sobre Poniente y sobre la casa ${casa.getNombre}.`);
+        }
+
+        console.log("Supervivientes aliados:");
+        console.log(this.#vivos(aliados));
+        console.log("Caminantes blancos supervivientes:");
+        console.log(this.#vivos(ejercitoCaminantes));
+    }
 }

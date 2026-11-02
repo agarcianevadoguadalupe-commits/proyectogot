@@ -44,11 +44,11 @@ export class dragon extends Personaje{
     atacar(objetivo) {
         if (objetivo instanceof caminanteBlanco) {
             console.log(this.getNombre + " ataca a " + objetivo.getNombre + " con fuego de dragón y lo elimina por completo.");
-            objetivo.recibirDano(objetivo.getVida);
+            objetivo.recibirDano(objetivo.getVida, this);
         } else {
             const dano = this.#poder;
             console.log(this.getNombre + " ataca a " + objetivo.getNombre + " causando " + dano + " puntos de daño.");
-            objetivo.recibirDano(dano);
+            objetivo.recibirDano(objetivo.getVida, this);
         }
     }
 

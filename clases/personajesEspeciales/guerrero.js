@@ -57,6 +57,6 @@ export class guerrero extends Personaje {
     atacar(objetivo) {
         const dano = Math.floor(this.#arma.getDano * (0.7 + Math.random() * 0.6)); // entre 70% y 130% del daño base
         console.log(`${this.getNombre} ataca a ${objetivo.getNombre} causando ${dano} puntos de daño.`);
-        objetivo.recibirDano(dano);
+        objetivo.recibirDano(dano, this.#arma);
     }
 }
