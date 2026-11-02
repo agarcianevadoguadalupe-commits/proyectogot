@@ -60,8 +60,7 @@ export class batalla {
     }
 
     mostrarSupervivientes(casaA, casaB) {
-        const vivos = [...this.#guerrerosVivos(casaA), ...this.#guerrerosVivos(casaB)]
-            .filter(m => !this.#muertos.includes(m));
+        const vivos = [...this.#guerrerosVivos(casaA), ...this.#guerrerosVivos(casaB)].filter(m => !this.#muertos.includes(m));
         console.log("Supervivientes:");
         console.log(vivos);
     }
